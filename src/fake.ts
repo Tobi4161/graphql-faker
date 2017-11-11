@@ -105,6 +105,15 @@ const fakeFunctions = {
       return (dateFormat !== undefined ? moment(date).format(dateFormat) : date)
     }
   },
+  deltaDate: {
+    args: ['dateFormat', 'days'],
+    func: (dateFormat, days =  7) => {
+      const fromDate = moment().subtract(days, 'days');
+      const toDate = moment().add(days, 'days');
+      const date = faker.date.between(fromDate.toDate(), toDate.toDate());
+      return (dateFormat !== undefined ? moment(date).format(dateFormat) : date)
+    }
+  },
 
   financeAccountName: () => faker.finance.accountName(),
   //TODO: investigate finance.mask

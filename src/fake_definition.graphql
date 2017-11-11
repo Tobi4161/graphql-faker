@@ -76,6 +76,8 @@ enum fake__Types {
   futureDate
   # Configure date format with option `dateFormat`
   recentDate
+  # Configure date format with option `dateFormat`
+  deltaDate
 
   financeAccountName
   financeTransactionType
@@ -174,6 +176,7 @@ input fake__options {
   # Only for types `*Date`. Example value: `YYYY MM DD`.
   # [Full Specification](http://momentjs.com/docs/#/displaying/format/)
   dateFormat: String
+  days: Int
 }
 
 directive @fake(type:fake__Types!, options: fake__options = {}, locale:fake__Locale) on FIELD_DEFINITION | SCALAR
